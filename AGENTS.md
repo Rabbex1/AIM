@@ -13,6 +13,21 @@ AIM is the overall interchange method. The current and only specified protocol i
 
 Use this file to decide what to read first and how to behave when a user wants to use AIM in a project.
 
+## Canonical framing
+
+When describing this repository:
+
+- `AIM` is the overall AI Interchange Method.
+- `AIM-ASP` is the current and only specified protocol, and the first AIM protocol under active testing.
+- AIM structures coordination; it does not automate communication by itself.
+- AIM-ASP is prompt-first and manually synchronised by default. External tools may automate it without changing its rules.
+- `AIM-AIP`, the planned Agent Instruction Protocol, is intended for sessions in which agents may exchange instructions and supporting information under explicit identity, authority, permission, and safety rules.
+- `AIM-ACP`, the planned Agent Collective Protocol, is intended for governed collective sessions with shared objectives, participant responsibilities, accountability, conflict disclosure, impact assessment, challenge, refusal, and audit mechanisms.
+- AIM-AIP and AIM-ACP will have separate semantics and trust models. They are not implemented, and they must not be described as extensions or layers that override AIM-ASP.
+- AIM Studio is the planned full automation and coordination environment. It is not part of the current implementation and must preserve the rules of whichever AIM protocol it operates.
+- Describe the project from the current repository. Do not infer or introduce former names, unpublished history, or predecessor projects unless the user explicitly asks.
+- Do not describe V0.1 as a production implementation or established standard. It is a working specification undergoing interoperability testing.
+
 ## Read order
 
 Read these documents in this order:
