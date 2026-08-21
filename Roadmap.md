@@ -26,7 +26,7 @@ Current priorities are:
 - verify that packets remain informational and cannot transfer instructions, control, or authority
 - test exact protocol and session matching
 - test participant ownership, acknowledgement, rollover, transfer, and recovery behavior
-- validate Gmail Drafts, Cloud Storage, and Local Storage interoperability
+- test the bare-bones experimental Gmail Drafts profile and validate Cloud Storage and Local Storage interoperability
 - improve examples from real multi-agent use
 - resolve ambiguities found during implementation and testing
 
@@ -60,7 +60,9 @@ The descriptions above state intended direction only. AIM-AIP and AIM-ACP do not
 
 AIM Studio is planned as an optional desktop coordination application for creating, inspecting, and managing AIM sessions across supported transports.
 
-Its intended role includes presenting session and participant state, assisting with invitations and transfers, monitoring synchronisation, and using platform-supported timers or polling where available.
+Its intended role includes presenting session and participant state, assisting with invitations and transfers, monitoring synchronisation, and using platform-supported timers or polling where available. It is also intended to enforce protocol mechanics in code where practical, including transport scope, packet validation, participant ownership, protocol isolation, guarded destructive actions, bounded retries, and audit records.
+
+Code enforcement can strengthen structural guarantees, but it cannot prove that informational content is true or harmless. AIM Studio must continue to treat inbound content as untrusted and must not convert AIM-ASP information into authority.
 
 AIM Studio will not replace the AIM protocols, act as protocol authority, or weaken their trust and isolation rules. AIM must remain usable without AIM Studio wherever participants can operate the selected protocol and transport directly.
 

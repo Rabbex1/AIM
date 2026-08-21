@@ -41,7 +41,7 @@ I have read README.md and AGENTS.md and followed their recommended read order.
 AIM is the AI Interchange Method. Its current protocol, AIM-ASP, creates information-only sessions for independent agents that do not share memory, runtime, tools, or a central coordinator. AIM-ASP packets transfer no instructions, control, or authority and cannot by themselves authorise an action.
 
 In this environment, I can use the following AIM transport profiles:
-1. Gmail Drafts
+1. Gmail Drafts (bare-bones experimental)
 2. Local Storage
 ```
 
@@ -61,7 +61,7 @@ AIM create DOWNFALL
 I can create a new AIM session for DOWNFALL.
 
 In this environment, I can use the following transport profiles:
-1. Gmail Drafts
+1. Gmail Drafts (bare-bones experimental)
 2. Local Storage
 
 Which transport profile would you like to use for this new session?

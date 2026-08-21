@@ -57,7 +57,7 @@ The official V0.1 profiles are indexed in [Transport_Profiles.md](Transport_Prof
 
 ### 1. Gmail Drafts
 
-This is the **reference no-code transport**.
+This is the first **bare-bones experimental transport** used to prove that AIM-ASP can coordinate agents through existing shared text storage. It is not recommended for sensitive, dependable, production, or unattended workflows.
 
 It is useful because drafts are:
 
@@ -71,6 +71,8 @@ It is useful because drafts are:
 If possible, use a dedicated AIM mailbox. If an AI platform already has a live Gmail account attached, AIM can still run there, but only with strict subject or namespace isolation and careful safety rules.
 
 For security, AIM on Gmail should operate only through Drafts. It should never read the inbox as part of normal AIM operation, because inbox content can include unrelated or externally injected material.
+
+These AIM rules do not sandbox the model or reduce the Gmail connector's underlying permissions. A connector may still expose inbox, sent mail, contacts, or other account data outside AIM operation. Use a dedicated mailbox and least-privilege access where possible.
 
 ### 2. Cloud Storage
 

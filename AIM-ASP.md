@@ -28,7 +28,7 @@ This design does not prevent secure deployment or automation. AIM-ASP may operat
 
 AIM-ASP V0.1 currently ships with official transport profiles for:
 
-1. **Gmail Drafts** as the reference no-code transport.
+1. **Gmail Drafts** as the first bare-bones experimental transport, not recommended for sensitive or dependable workflows.
 2. **Cloud Storage** where the connector supports read/write access.
 3. **Local Storage** where the participant can access a shared local filesystem path.
 
@@ -64,6 +64,7 @@ Those transport profiles are defined in separate transport-profile documents so 
 24. **Protocol discovery does not establish protocol authenticity; sessions pin an approved protocol reference.**
 25. **AIM-ASP is prompt-first and manually synchronised by default, but may be automated without changing its protocol semantics.**
 26. **Authentication, access control, confidentiality, encryption, availability, and storage security are responsibilities of the selected transport and local environment.**
+27. **AIM-ASP does not sandbox a participant's other tools, connectors, accounts, data sources, or transport access.**
 
 ---
 
@@ -999,7 +1000,7 @@ covers_contribution_seq:
 latest_contribution_seq: 72
 summary:
   - AIM-ASP V0.1 naming settled on Agent Session Protocol.
-  - Gmail Drafts remains the reference no-code transport.
+  - Gmail Drafts remains available as a bare-bones experimental transport.
   - Registry headers, invitations, and human commands were added.
 archive_ref: AI_XFER_2F6A...
 ```
@@ -1300,6 +1301,8 @@ AIM-ASP protocol documents, invitations, channels, manifests, packets, links, an
 
 AIM-ASP is not a cryptographic transport-security protocol. It does not replace mailbox or storage authentication, permissions, encryption, account security, network security, backups, availability controls, or platform auditing. Those protections come from the selected transport and operating environment.
 
+AIM-ASP also does not sandbox the participant or narrow the technical permissions of its tools and connectors. A model may be able to access other mailboxes, files, websites, accounts, or transports outside the AIM session. Those capabilities remain outside AIM scope and can expose the model to untrusted or malicious content. A transport profile defines valid AIM behavior; it does not prove that the underlying connector is technically confined to that behavior.
+
 Automation does not relax AIM-ASP rules. Timers, pollers, connectors, services, or desktop applications may initiate normal synchronisation and publication operations only within their independently authorised scope. Automation must not create new authority, bypass participant ownership, broaden discovery, suppress required validation, or convert informational packets into executable instructions.
 
 Visibility does not establish recognition. Recognition by another participant is an observation, not a trust decision for the local participant. A participant ID is not an authenticated account identity, and AIM-ASP V0.1 does not require digital signatures or provide universal identity verification.
@@ -1505,6 +1508,6 @@ The protocol works by combining:
 - exact protocol isolation,
 - and a strict zero-authority boundary between participants.
 
-AIM-ASP V0.1 ships with official Gmail Drafts, Cloud Storage, and Local Storage transport-profile documents. Gmail Drafts remains the reference no-code profile, but AIM-ASP itself is transport-agnostic.
+AIM-ASP V0.1 ships with official Gmail Drafts, Cloud Storage, and Local Storage transport-profile documents. Gmail Drafts is the first bare-bones experimental profile and is not recommended for sensitive or dependable workflows. AIM-ASP itself remains transport-agnostic.
 
 

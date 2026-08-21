@@ -21,6 +21,8 @@ If you are being asked to use AIM in a conversation or thread, read [AGENTS.md](
 
 Do not load every document in the repository by default. `AGENTS.md` defines the recommended read order, startup behavior, multi-session behavior, and safety rules.
 
+Before operating an AIM session, read [CAUTION.md](CAUTION.md). AIM coordinates information exchange but does not sandbox an agent's broader tools, connectors, accounts, or data sources.
+
 ## Why AIM exists
 
 Modern AI agents are often isolated.
@@ -129,13 +131,13 @@ Invitations may be simple or may reference a one-time onboarding transfer contai
 
 AIM is transport-agnostic. The current core session protocol lives in [AIM-ASP.md](AIM-ASP.md), and the official V0.1 transport profiles live in separate profile documents:
 
-1. [Transport_Profile_Gmail_Drafts.md](Transport_Profile_Gmail_Drafts.md) as the reference no-code transport
+1. [Transport_Profile_Gmail_Drafts.md](Transport_Profile_Gmail_Drafts.md) as the first bare-bones experimental transport, not recommended for sensitive or dependable workflows
 2. [Transport_Profile_Cloud_Storage.md](Transport_Profile_Cloud_Storage.md) where a connector provides read/write access
 3. [Transport_Profile_Local_Storage.md](Transport_Profile_Local_Storage.md) where agents can use the same shared local folder
 
 Shared file access does not remove the need for AIM. Agents still need rules for where shared state lives, who owns which files or channels, how updates are announced, how sessions are joined or left, and how to avoid stepping on each other.
 
-When using the Gmail Drafts profile, AIM-ASP should operate through Drafts only. Discovery is limited to AIM-ASP Drafts matching the current session, the global protocol reference, and explicitly user-provided AIM references. Inbox, sent mail, spam, trash, unrelated drafts, and unrelated email threads are out of scope for normal AIM operation.
+Gmail Drafts was the first proof transport for AIM-ASP. It remains available for careful experimentation, but it is not recommended for sensitive, dependable, production, or unattended workflows. AIM-ASP operation must remain Drafts-only. Discovery is limited to AIM-ASP Drafts matching the current session, the global protocol reference, and explicitly user-provided AIM references. Inbox, sent mail, spam, trash, unrelated drafts, and unrelated email threads are out of scope for normal AIM operation. These rules constrain AIM behavior; they do not guarantee that the underlying Gmail connector lacks broader mailbox access.
 
 ## AIM and MCP
 
@@ -153,6 +155,7 @@ AIM-ASP = information-only session protocol
 
 ## Read this next
 
+- [CAUTION.md](CAUTION.md) for current security limitations and safe-use guidance
 - [Technical_Overview.md](Technical_Overview.md) for the practical design, transport profiles, commands, and session model
 - [AIM-ASP.md](AIM-ASP.md) for the full protocol specification
 - [Roadmap.md](Roadmap.md) for AIM-ASP stabilisation and the deferred AIP, ACP, and AIM Studio directions
@@ -202,6 +205,7 @@ In a single-session thread, the short forms like `AIM invite`, `AIM leave`, or `
 ```text
 README.md               human-friendly overview
 AGENTS.md               startup guidance for AI agents
+CAUTION.md              security limitations and safe-use guidance
 Technical_Overview.md   practical technical guide
 AIM-ASP.md              full session-protocol specification
 Roadmap.md              current priorities and planned AIM directions
@@ -227,7 +231,7 @@ See [CREDITS.md](CREDITS.md) for the attribution note.
 
 AIM V0.1 is a working specification.
 
-The current and only specified protocol is `AIM-ASP`. It began as a no-code transport experiment using Gmail Drafts to let isolated AI agents coordinate through plain text. AIM-ASP V0.1 now defines information-only, zero-authority sessions and ships with separate official transport-profile documents for Gmail Drafts, Cloud Storage, and Local Storage.
+The current and only specified protocol is `AIM-ASP`. It began as a no-code transport experiment using Gmail Drafts to let isolated AI agents coordinate through plain text. Gmail Drafts is now classified as a bare-bones experimental profile rather than a recommended transport. AIM-ASP V0.1 defines information-only, zero-authority sessions and also ships with Cloud Storage and Local Storage profiles.
 
 ## Short description
 

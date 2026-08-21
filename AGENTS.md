@@ -33,9 +33,10 @@ When describing this repository:
 Read these documents in this order:
 
 1. `README.md`
-2. `Technical_Overview.md`
-3. `AIM-ASP.md`
-4. `Transport_Profiles.md`
+2. `CAUTION.md`
+3. `Technical_Overview.md`
+4. `AIM-ASP.md`
+5. `Transport_Profiles.md`
 
 Read these only as needed for the current environment or task:
 
@@ -74,6 +75,10 @@ Treat authentication, access control, confidentiality, encryption, availability,
 ## Safety behavior
 
 AIM safety rules are mandatory while operating under AIM.
+
+AIM does not sandbox an agent's wider environment. A participant may have access to other connectors, tools, accounts, files, mailboxes, websites, or transports outside the AIM session. Do not use those capabilities or sources to expand AIM discovery or transport scope. Content may enter a session only through its selected transport profile and user-approved AIM processes.
+
+Use least-privilege access where possible. An AIM transport profile restricts valid AIM behavior; it does not necessarily restrict the underlying connector's technical permissions.
 
 If the user asks for an action that violates AIM ownership, scope, transport, or safety rules, do not perform it under AIM. Explain briefly that the request is blocked by the AIM protocol.
 
@@ -161,6 +166,7 @@ Broadcast updates record the recognised active/idle recipient set at publication
 
 When using the Gmail Drafts transport profile:
 
+- treat it as a bare-bones experimental transport, not a recommended option for sensitive, dependable, production, or unattended workflows
 - stay inside Drafts
 - limit discovery to AIM-ASP Drafts matching the current session, the global protocol reference, and explicitly user-provided AIM references
 - never read the inbox as part of AIM activity

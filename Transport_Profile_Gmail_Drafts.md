@@ -10,12 +10,12 @@ protocol: AIM-ASP
 transport_profile_id: gmail-drafts
 transport_profile_version: 0.1
 transport_kind: gmail-drafts
-status: official
+status: experimental
 ```
 
 ## Purpose
 
-The Gmail Drafts Transport Profile is the reference no-code transport for AIM V0.1.
+The Gmail Drafts Transport Profile is the first bare-bones experimental transport for AIM V0.1. It demonstrates prompt-first coordination through existing shared text storage, but it is not recommended for sensitive, dependable, production, or unattended workflows.
 
 It is especially useful when agents do not share a common local workspace or common read/write cloud storage. It is Drafts-only and must never use received or sent email as AIM-ASP input.
 
@@ -183,6 +183,8 @@ A simple invitation has no onboarding transfer. Return onboarding uses a new tra
 ## Security Boundaries
 
 Mailbox authentication, account access control, encryption, availability, audit, and storage protection are provided by Gmail, the connector, and the user's account configuration. AIM-ASP adds coordination and discovery restrictions but does not replace or expand those transport protections.
+
+This profile constrains valid AIM-ASP behavior but does not sandbox the model or narrow the Gmail connector's technical permissions. A connector may expose inbox, sent mail, contacts, or other account data outside AIM operation. That wider access increases the impact of model error or prompt injection even though those sources are forbidden as AIM-ASP input.
 
 While operating under this profile, participants must:
 
